@@ -82,6 +82,7 @@ public class ChatManger {
 			}
 		}
 	}
+	//test for git
 
 	String IP;
 	public void connect(String ip,int prot){
