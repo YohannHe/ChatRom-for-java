@@ -51,7 +51,7 @@ public class ReSaveFile {
 	                jFileChooser.setSelectedFile(new File(a[4]));
 	                int y = jFileChooser.showSaveDialog(null);
 	                /*   
-	                 * ÎÄ¼ş´æ´¢Î»ÖÃ   
+	                 * æ–‡ä»¶å­˜å‚¨ä½ç½®   
 	                 */  
 	        
 	                if (y==jFileChooser.CANCEL_OPTION) {
@@ -80,7 +80,7 @@ public class ReSaveFile {
 			                inputByte = new byte[40960];     
 			                Thread.sleep(1000);
 			                sendFileUI.setFileName(file.getName());
-				            sendFileUI.setTitle("ÕıÔÚ½ÓÊÕÀ´×Ô "+a[1]+"·¢ËÍµÄÎÄ¼ş("+file.getName()+")");
+				            sendFileUI.setTitle("æ­£åœ¨æ¥æ”¶æ¥è‡ª "+a[1]+"å‘é€çš„æ–‡ä»¶("+file.getName()+")");
 			                while ((length = dis.read(inputByte, 0, inputByte.length)) > 0) {  
 			                	if (sendFileUI.close()) {
 									socket.close();
@@ -92,7 +92,7 @@ public class ReSaveFile {
 			                    fos.write(inputByte, 0, length); 
 			                    fos.flush();      
 			                }  
-			               JOptionPane.showMessageDialog(null, "Íê³É½ÓÊÕ£º"+jFileChooser.getSelectedFile().getPath());
+			               JOptionPane.showMessageDialog(null, "å®Œæˆæ¥æ”¶ï¼š"+jFileChooser.getSelectedFile().getPath());
 			               sendFileUI.dispose();
 					}
 	              
@@ -107,7 +107,7 @@ public class ReSaveFile {
 	        } catch (Exception e) { 
 	        	e.printStackTrace();
 	        	if (!sendFileUI.close()) {
-	        		JOptionPane.showMessageDialog(null, "ÓÉÓÚÖÖÖÖÔ­Òò£¬ÎÄ¼ş´«ÊäÖĞ¶Ï£¡");
+	        		JOptionPane.showMessageDialog(null, "ç”±äºç§ç§åŸå› ï¼Œæ–‡ä»¶ä¼ è¾“ä¸­æ–­ï¼");
 				}
 	        	sendFileUI.dispose();
 	        	if (file.exists()) {
