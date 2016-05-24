@@ -262,6 +262,7 @@ public class ChatManger {
 			e.printStackTrace();
 		}
 	}
+	//VSC ≤‚ ‘Õ∆ÀÕgithub
 	public void sendChatRomMsg(String ip,String text){
 		
 		BufferedReader br = new BufferedReader(new StringReader(text));
