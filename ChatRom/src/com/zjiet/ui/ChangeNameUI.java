@@ -61,7 +61,7 @@ public class ChangeNameUI {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (textField.getText().length()>20) {
-					JOptionPane.showMessageDialog(null, "昵称限制长度(20)!");
+					JOptionPane.showMessageDialog(null, "鏄电О闄愬埗闀垮害(20)!");
 				}else {
 					ChatManger.getCM().sendCmd("ChangeName<>"+ChatManger.getCM().getUserID()+"<>"+textField.getText().trim());
 				}

@@ -9,7 +9,7 @@ public class ChatManger {
 	}
 	Vector<ChatSocket> vector = new Vector<ChatSocket>();
 	Vector<Vector<String>> ChatRomManger = new Vector<>();
-	//Ìí¼Ósocket
+	//æ·»åŠ socket
 	public void add(ChatSocket cs){
 		vector.add(cs);
 		
@@ -91,7 +91,7 @@ public class ChatManger {
 							for(int k=0;k<vector.size();k++){
 								ChatSocket cSocket = vector.get(k);
 								if (cSocket.socket.getInetAddress().getHostAddress().equals(c[1])&&!cSocket.socket.getInetAddress().getHostAddress().equals(a[2])) {
-									System.err.println("socket£º"+line);
+									System.err.println("socketï¼š"+line);
 									cSocket.out(line);
 									
 								}
@@ -106,7 +106,7 @@ public class ChatManger {
 		}.start();
 	}
 
-	//»ñÈ¡µ±Ç°ÔÚÏßÈËÊı
+	//è·å–å½“å‰åœ¨çº¿äººæ•°
 	public int getCount(){
 		int count=0;
 		for (int i = 0; i < vector.size(); i++) {
@@ -114,7 +114,7 @@ public class ChatManger {
 		}
 		return count;
 	}
-	//ÒÆ³ıÀëÏßsocket
+	//ç§»é™¤ç¦»çº¿socket
 	public void del(ChatSocket cs){
 		
 		for(int i=0;i<vector.size();i++){
@@ -131,7 +131,7 @@ public class ChatManger {
 		}
 	}
 	
-	//ÏòµÇÂ¼ÓÃ»§·¢ËÍÔÚÏßÓÃ»§ÁĞ±í
+	//å‘ç™»å½•ç”¨æˆ·å‘é€åœ¨çº¿ç”¨æˆ·åˆ—è¡¨
 	public void sendIPList(ChatSocket cs){
 		for(int j=0;j<vector.size();j++){
 			if (!vector.get(j).equals(cs)) {
@@ -148,7 +148,7 @@ public class ChatManger {
 			 
 		}
 	
-		//Ïò¿Í»§¶Ë¸üĞÂÔÚÏßÈËÊı£¡
+		//å‘å®¢æˆ·ç«¯æ›´æ–°åœ¨çº¿äººæ•°ï¼
 		for(int i=0;i<vector.size();i++){
 			
 				vector.get(i).out("UPDataCount<>"+count);
@@ -156,7 +156,7 @@ public class ChatManger {
 		}
 	}
 	
-	//ÏòÔÚÏßÓÃ»§ ·¢ËÍ ÓÃ»§ÏÂÏßÏûÏ¢
+	//å‘åœ¨çº¿ç”¨æˆ· å‘é€ ç”¨æˆ·ä¸‹çº¿æ¶ˆæ¯
 	public void sendOffline(ChatSocket cs){
 		for(int i=0;i<vector.size();i++){
 			if (!vector.get(i).equals(cs)) {

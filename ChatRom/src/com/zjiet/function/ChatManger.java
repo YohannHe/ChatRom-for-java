@@ -59,6 +59,7 @@ public class ChatManger {
 			}
 		}
 	}
+	//ä»chatRomsä¸­åˆ é™¤æŒ‡å®šçš„èŠå¤©çª—å£
 	public void delChatRomWin(ChatRom chatRom){
 		for (int i = 0; i < chatRoms.size(); i++) {
 			if (chatRoms.get(i).equals(chatRom)) {
@@ -66,9 +67,11 @@ public class ChatManger {
 			}
 		}
 	}
+	//å°†æ–°å»ºçš„èŠå¤©çª—å£åŠ å…¥åˆ°chatRomsä¸­å»ï¼Œè¿›è¡Œç»Ÿä¸€ç®¡ç†
 	public void addChatRomWin(ChatRom chatRom){
 		chatRoms.addElement(chatRom);
 	}
+	//è·å–æœ¬åœ°IP
 	public String getLocalIP(){
 		return socket.getLocalAddress().getHostAddress();
 	}
@@ -97,7 +100,7 @@ public class ChatManger {
 							new OutputStreamWriter(socket.getOutputStream()));
 					 
 					String line;
-					System.out.println("cm×¼±¸½ÓÊÕÊı¾İ");
+					System.out.println("cmå‡†å¤‡æ¥æ”¶æ•°æ®");
 					while ((line=reader.readLine())!=null) {
 						System.out.println("CM:"+line);
 						changeinfo = line;
@@ -125,19 +128,19 @@ public class ChatManger {
 							public void run() {
 								switch (changeinfo) {
 								case "ChangePassTrue":
-									JOptionPane.showMessageDialog(null, "ÃÜÂëĞŞ¸Ä³É¹¦£¡");
+									JOptionPane.showMessageDialog(null, "å¯†ç ä¿®æ”¹æˆåŠŸï¼");
 									break;
 								case "ChangePassERROR":
-									JOptionPane.showMessageDialog(null, "·¢Éú´íÎó£¬ÃÜÂëĞŞ¸ÄÊ§°Ü£¡");
+									JOptionPane.showMessageDialog(null, "å‘ç”Ÿé”™è¯¯ï¼Œå¯†ç ä¿®æ”¹å¤±è´¥ï¼");
 									break;
 								case "ChangePassFalse":
-									JOptionPane.showMessageDialog(null, "ÃÜÂëÑéÖ¤Ê§°Ü£¡");
+									JOptionPane.showMessageDialog(null, "å¯†ç éªŒè¯å¤±è´¥ï¼");
 									break;
 								case "ChangeNameTrue":
-									JOptionPane.showMessageDialog(null, "êÇ³ÆĞŞ¸Ä³É¹¦£¡");
+									JOptionPane.showMessageDialog(null, "æ˜µç§°ä¿®æ”¹æˆåŠŸï¼");
 									break;
 								case "ChangeNameERROR":
-									JOptionPane.showMessageDialog(null, "·¢Éú´íÎó£¬êÇ³ÆĞŞ¸ÄÊ§°Ü£¡");
+									JOptionPane.showMessageDialog(null, "å‘ç”Ÿé”™è¯¯ï¼Œæ˜µç§°ä¿®æ”¹å¤±è´¥ï¼");
 									break;
 								}
 							};
@@ -215,7 +218,7 @@ public class ChatManger {
 							
 						}
 						
-						//mainWindow.appendText("ÊÕµ½£º"+line+"\n");
+						//mainWindow.appendText("æ”¶åˆ°ï¼š"+line+"\n");
 					}
 				} catch (UnknownHostException e) {
 					e.printStackTrace();
@@ -238,7 +241,7 @@ public class ChatManger {
 			}
 			
 		}else{
-			JOptionPane.showMessageDialog(null, "Äã²¢²»ÄÜÁ¬ÉÏ·şÎñÆ÷£¡Ò²ĞíÊÇ·şÎñÆ÷IP¸Ä±ä£¬ÇëÁªÏµ¹ÜÀíÔ±£¡");
+			JOptionPane.showMessageDialog(null, "ä½ å¹¶ä¸èƒ½è¿ä¸ŠæœåŠ¡å™¨ï¼ä¹Ÿè®¸æ˜¯æœåŠ¡å™¨IPæ”¹å˜ï¼Œè¯·è”ç³»ç®¡ç†å‘˜ï¼");
 			send  = false;
 		}
 		return send;
@@ -262,7 +265,7 @@ public class ChatManger {
 			e.printStackTrace();
 		}
 	}
-	//VSC ²âÊÔÍÆËÍgithub
+	//VSC æµ‹è¯•æ¨é€github
 	public void sendChatRomMsg(String ip,String text){
 		
 		BufferedReader br = new BufferedReader(new StringReader(text));
@@ -296,8 +299,8 @@ public class ChatManger {
 	
 	public void doReSaveFile(String fileinfo){
 		String a[] = fileinfo.split("<>");
-		int flag = JOptionPane.showConfirmDialog(null, a[1]+"ÏòÄã·¢ËÍÎÄ¼ş("+a[4]+")ÊÇ·ñ½ÓÊÕ£¿",  
-                "ÌáÊ¾", JOptionPane.YES_NO_OPTION,  
+		int flag = JOptionPane.showConfirmDialog(null, a[1]+"å‘ä½ å‘é€æ–‡ä»¶("+a[4]+")æ˜¯å¦æ¥æ”¶ï¼Ÿ",  
+                "æç¤º", JOptionPane.YES_NO_OPTION,  
                 JOptionPane.INFORMATION_MESSAGE);  
         if(JOptionPane.YES_OPTION == flag){  
         	
@@ -334,7 +337,7 @@ public class ChatManger {
 		}
 		
 	}
-	//ÉèÖÃÖ÷½çÃæ ÓÃ»§ÃûºÍµ±Ç°ÔÚÏßÈËÊı
+	//è®¾ç½®ä¸»ç•Œé¢ ç”¨æˆ·åå’Œå½“å‰åœ¨çº¿äººæ•°
 	public void setting(){
 		
 		mainWindow.setCount(count);
@@ -350,7 +353,7 @@ public class ChatManger {
 	public void UPData(String data){
 		if (data.substring(0,11).equals("UPDataCount")) {
 			String a[] = data.split("<>");
-			count="µ±Ç°ÔÚÏßÈËÊı:"+a[1];
+			count="å½“å‰åœ¨çº¿äººæ•°:"+a[1];
 		}
 	}
 	public void setName(String name){
@@ -391,7 +394,7 @@ public class ChatManger {
 				for (int i = 0; i < chatRoms.size(); i++) {
 					if (chatRoms.get(i).getRomID().equals(a[1])) {
 						chatRoms.get(i).dispose();
-						JOptionPane.showMessageDialog(null, "Äú±»ÒÆ³ıÁÄÌìÊÒ("+chatRoms.get(i).getTitle()+")");
+						JOptionPane.showMessageDialog(null, "æ‚¨è¢«ç§»é™¤èŠå¤©å®¤("+chatRoms.get(i).getTitle()+")");
 						chatRoms.removeElementAt(i);
 					}
 				}
@@ -403,8 +406,8 @@ public class ChatManger {
 		new Thread(){
 			public void run() {
 				String a[] = info.split("<>");
-				int flag = JOptionPane.showConfirmDialog(null, a[1]+"ÑûÇëÄã¼ÓÈëÁÄÌìÊÒ("+a[2]+")ÊÇ·ñ½ÓÊÜ£¿",  
-		                "ÌáÊ¾", JOptionPane.YES_NO_OPTION,  
+				int flag = JOptionPane.showConfirmDialog(null, a[1]+"é‚€è¯·ä½ åŠ å…¥èŠå¤©å®¤("+a[2]+")æ˜¯å¦æ¥å—ï¼Ÿ",  
+		                "æç¤º", JOptionPane.YES_NO_OPTION,  
 		                JOptionPane.INFORMATION_MESSAGE);  
 				if (JOptionPane.YES_OPTION==flag) {	
 					EventQueue.invokeLater(new Runnable() {

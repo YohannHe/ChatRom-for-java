@@ -9,9 +9,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
 import javax.swing.JOptionPane;
-
 import com.zjiet.empty.UserInfo;
 import com.zjiet.ui.Login;
 import com.zjiet.ui.Main;
@@ -20,6 +18,7 @@ import com.zjiet.ui.Regist;
 public class FunctionManger {
 	private FunctionManger(){}
 	private static final FunctionManger  instance = new FunctionManger();
+	//å•ä¾‹æ¨¡å¼
 	public static FunctionManger getCM(){
 		return instance;
 	}
@@ -72,7 +71,7 @@ public class FunctionManger {
 							} 
 						}
 						if (line.length()==11) {
-							//ÒÑÔÚÏß²»ÔÊĞíÖØ¸´µÇÂ¼
+							//å·²åœ¨çº¿ä¸å…è®¸é‡å¤ç™»å½•
 							if (line.substring(0,11).equals("{OnLineITS}")) {
 								checkPass(line);
 							} 
@@ -80,12 +79,12 @@ public class FunctionManger {
 						
 					
 						
-						//mainWindow.appendText("ÊÕµ½£º"+line+"\n");
+						//mainWindow.appendText("æ”¶åˆ°ï¼š"+line+"\n");
 					}
 				
 					
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "Á¬½Ó·şÎñÆ÷Ê§°Ü£¬Çë¼ì²éÄãµÄÍøÂç»òÁªÏµ¹ÜÀíÔ±£¡");
+					JOptionPane.showMessageDialog(null, "è¿æ¥æœåŠ¡å™¨å¤±è´¥ï¼Œè¯·æ£€æŸ¥ä½ çš„ç½‘ç»œæˆ–è”ç³»ç®¡ç†å‘˜ï¼");
 					loginwin.disable();
 					e.printStackTrace();
 				}
@@ -105,7 +104,7 @@ public class FunctionManger {
 			}
 			
 		}else{
-			JOptionPane.showMessageDialog(null, "Äã²¢²»ÄÜÁ¬ÉÏ·şÎñÆ÷£¡Ò²ĞíÊÇ·şÎñÆ÷IP¸Ä±ä£¬ÇëÁªÏµ¹ÜÀíÔ±£¡");
+			JOptionPane.showMessageDialog(null, "ä½ å¹¶ä¸èƒ½è¿ä¸ŠæœåŠ¡å™¨ï¼ä¹Ÿè®¸æ˜¯æœåŠ¡å™¨IPæ”¹å˜ï¼Œè¯·è”ç³»ç®¡ç†å‘˜ï¼");
 			send  = false;
 		}
 		return send;
@@ -120,16 +119,17 @@ public class FunctionManger {
 			}else {
 				String a[] = line.split("<>");
 				ChatManger.getCM().setName(a[1]);
-//				count = "µ±Ç°ÔÚÏßÈËÊı£º"+a[2];
+//				count = "å½“å‰åœ¨çº¿äººæ•°ï¼š"+a[2];
 				loginwin.checkPass("True");
 			
-			} 
+			}
+			
 
 	}
 	public void addUser(String line){
 		String a[] = line.split("<>");
 		regist.dipose();
-		JOptionPane.showMessageDialog(null, "Äú×¢²áµÄIDÊÇ£º ("+a[1]+")");
+		JOptionPane.showMessageDialog(null, "æ‚¨æ³¨å†Œçš„IDæ˜¯ï¼š ("+a[1]+")");
 		
 	}
 	
